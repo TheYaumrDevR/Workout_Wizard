@@ -1,11 +1,11 @@
 package org.ethasia.workoutwizard.core.exercises.tests
 
+import org.hamcrest.CoreMatchers.*
 import org.junit.Assert.assertThat
 import org.junit.Test
 import java.util.*
 
 import org.ethasia.workoutwizard.core.exercises.ExerciseSet
-import org.hamcrest.CoreMatchers.*
 
 class ExerciseSetTest {
 
