@@ -3,9 +3,9 @@ package org.ethasia.workoutwizard.core.exercises
 import java.util.Date
 
 class ExerciseSet private constructor(
-        val weight: Float,
-        val repetitionCount: Int,
-        val performDate: Date
+    val weight: Float,
+    val repetitionCount: Int,
+    val performDate: Date
     ) {
 
     data class Builder(var weight: Float = 0.0f,
