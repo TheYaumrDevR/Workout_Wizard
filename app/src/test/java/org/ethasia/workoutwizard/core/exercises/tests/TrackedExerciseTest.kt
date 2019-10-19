@@ -1,12 +1,12 @@
 package org.ethasia.workoutwizard.core.exercises.tests
 
-import org.ethasia.workoutwizard.core.exercises.ExerciseSet
 import org.hamcrest.CoreMatchers.*
 import org.junit.Assert.assertThat
 import org.junit.Test
-
-import org.ethasia.workoutwizard.core.exercises.TrackedExercise
 import java.util.*
+
+import org.ethasia.workoutwizard.core.exercises.ExerciseSet
+import org.ethasia.workoutwizard.core.exercises.TrackedExercise
 
 class TrackedExerciseTest {
 
