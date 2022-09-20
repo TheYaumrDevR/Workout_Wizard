@@ -2,8 +2,8 @@ package org.ethasia.workoutwizard.interactors.exercisetracking.tests
 
 import java.util.*
 
-import org.ethasia.workoutwizard.core.exercises.ExerciseSet
-import org.ethasia.workoutwizard.core.exercises.TrackedExercise
+import org.ethasia.workoutwizard.core.exercises.ExerciseSetWithRepetitionsAndWeights
+import org.ethasia.workoutwizard.core.exercises.TrackedWorkout
 import org.ethasia.workoutwizard.interactors.exercisetracking.crosslayer.TrackedExercisesGateway
 
 class TrackedExercisesGatewayMock : TrackedExercisesGateway {
@@ -17,55 +17,47 @@ class TrackedExercisesGatewayMock : TrackedExercisesGateway {
         }
     }
 
-    override fun findTrackedExercises(): List<TrackedExercise> {
+    override fun findTrackedExercises(): List<TrackedWorkout> {
         findTrackedExercisesCallCount++
 
-        val testDate = Date()
-
-        val setOne = ExerciseSet.Builder()
+        val setOne = ExerciseSetWithRepetitionsAndWeights.Builder()
             .weight(25f)
             .repetitionCount(8)
-            .performDate(testDate)
             .build()
-        val setTwo = ExerciseSet.Builder()
+        val setTwo = ExerciseSetWithRepetitionsAndWeights.Builder()
             .weight(25f)
             .repetitionCount(8)
-            .performDate(testDate)
             .build()
-        val setThree = ExerciseSet.Builder()
+        val setThree = ExerciseSetWithRepetitionsAndWeights.Builder()
             .weight(25f)
             .repetitionCount(8)
-            .performDate(testDate)
             .build()
-        val benchPress = TrackedExercise.Builder()
+        val benchPress = TrackedWorkout.Builder()
             .name("Bench Press")
             .addExerciseSet(setOne)
             .addExerciseSet(setTwo)
             .addExerciseSet(setThree)
             .build()
 
-        val setFour = ExerciseSet.Builder()
+        val setFour = ExerciseSetWithRepetitionsAndWeights.Builder()
             .weight(12.5f)
             .repetitionCount(8)
-            .performDate(testDate)
             .build()
-        val setFive = ExerciseSet.Builder()
+        val setFive = ExerciseSetWithRepetitionsAndWeights.Builder()
             .weight(12.5f)
             .repetitionCount(8)
-            .performDate(testDate)
             .build()
-        val setSix = ExerciseSet.Builder()
+        val setSix = ExerciseSetWithRepetitionsAndWeights.Builder()
             .weight(12.5f)
             .repetitionCount(8)
-            .performDate(testDate)
             .build()
-        val dumbbellFly = TrackedExercise.Builder()
+        val dumbbellFly = TrackedWorkout.Builder()
             .name("Dumbbell Fly")
             .addExerciseSet(setFour)
             .addExerciseSet(setFive)
             .addExerciseSet(setSix)
             .build()
 
-        return arrayListOf<TrackedExercise>(benchPress, dumbbellFly)
+        return arrayListOf<TrackedWorkout>(benchPress, dumbbellFly)
     }
 }

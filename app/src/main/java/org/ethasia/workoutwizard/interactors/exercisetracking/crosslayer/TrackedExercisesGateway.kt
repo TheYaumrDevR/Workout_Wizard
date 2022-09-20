@@ -1,8 +1,8 @@
 package org.ethasia.workoutwizard.interactors.exercisetracking.crosslayer
 
-import org.ethasia.workoutwizard.core.exercises.TrackedExercise
+import org.ethasia.workoutwizard.core.exercises.TrackedWorkout
 
 interface TrackedExercisesGateway {
 
-    fun findTrackedExercises(): List<TrackedExercise>
+    fun findTrackedExercises(): List<TrackedWorkout>
 }

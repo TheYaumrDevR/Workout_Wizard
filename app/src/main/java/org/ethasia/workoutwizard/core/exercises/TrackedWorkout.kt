@@ -1,6 +1,6 @@
 package org.ethasia.workoutwizard.core.exercises
 
-class TrackedExercise private constructor(
+class TrackedWorkout private constructor(
     val name: String,
     val sets: List<ExerciseSet>) {
 
@@ -10,6 +10,6 @@ class TrackedExercise private constructor(
 
         fun name(value: String) = apply { name = value }
         fun addExerciseSet(value: ExerciseSet) = apply { exerciseSets.add(value) }
-        fun build() = TrackedExercise(name, exerciseSets.toList())
+        fun build() = TrackedWorkout(name, exerciseSets.toList())
     }
 }
