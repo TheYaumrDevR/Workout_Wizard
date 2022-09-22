@@ -39,19 +39,25 @@ class WorkoutCycleDefinitionTest {
             .name("Skull Lateral Raise")
             .build()
 
-        testCandidate.addExerciseSetDefinition(setOne)
-        testCandidate.addExerciseSetDefinition(setTwo)
-        testCandidate.addExerciseSetDefinition(setThree)
-        testCandidate.addExerciseSetDefinition(setFour)
-        testCandidate.addExerciseSetDefinition(setFive)
+        testCandidate.addExerciseSetDefinitionWithExecutionAmount(setOne, 1)
+        testCandidate.addExerciseSetDefinitionWithExecutionAmount(setTwo, 3)
+        testCandidate.addExerciseSetDefinitionWithExecutionAmount(setThree, 3)
+        testCandidate.addExerciseSetDefinitionWithExecutionAmount(setFour, 3)
+        testCandidate.addExerciseSetDefinitionWithExecutionAmount(setFive, 3)
 
         val controlList = listOf(setOne, setTwo, setThree, setFour, setFive)
+        val controlListExecutionAmount = listOf(1, 3, 3, 3, 3)
+
         val controlIterator = controlList.iterator()
+        val controlIteratorExecutionAmount = controlListExecutionAmount.iterator()
 
         val setsIterator = testCandidate.definitionsIterator()
 
-        while (setsIterator.hasNext() || controlIterator.hasNext()) {
-            assertThat(setsIterator.next(), `is`(equalTo(controlIterator.next())))
+        while (setsIterator.hasNext() || controlIterator.hasNext() || controlIteratorExecutionAmount.hasNext()) {
+            val nextActualSetDefinition = setsIterator.next()
+
+            assertThat(nextActualSetDefinition.exerciseSetDefinition, `is`(equalTo(controlIterator.next())))
+            assertThat(nextActualSetDefinition.executionAmount, `is`(equalTo(controlIteratorExecutionAmount.next())))
         }
     }
 }
