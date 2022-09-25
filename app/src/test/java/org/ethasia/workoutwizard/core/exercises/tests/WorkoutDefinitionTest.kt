@@ -6,13 +6,13 @@ import org.junit.Test
 
 import org.ethasia.workoutwizard.core.exercises.ExerciseBaseType
 import org.ethasia.workoutwizard.core.exercises.ExerciseSetDefinition
-import org.ethasia.workoutwizard.core.exercises.WorkoutCycleDefinition
+import org.ethasia.workoutwizard.core.exercises.WorkoutDefinition
 
-class WorkoutCycleDefinitionTest {
+class WorkoutDefinitionTest {
 
     @Test
     fun testIteratorReturnsPreviouslyAddedExerciseSets() {
-        val testCandidate = WorkoutCycleDefinition("Push Workout")
+        val testCandidate = WorkoutDefinition("Push Workout")
 
         val setOne: ExerciseSetDefinition = ExerciseSetDefinition.Builder()
             .baseType(ExerciseBaseType.WITH_REPETITIONS)
