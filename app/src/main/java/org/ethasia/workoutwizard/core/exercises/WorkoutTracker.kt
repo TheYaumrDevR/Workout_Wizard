@@ -2,7 +2,8 @@ package org.ethasia.workoutwizard.core.exercises
 
 class WorkoutTracker {
 
-    private lateinit var trackedWorkout: TrackedWorkout
+    lateinit var trackedWorkout: TrackedWorkout
+        private set
 
     fun startWorkoutFromWorkoutDefinition(definition: WorkoutDefinition) {
         val trackedWorkoutBuilder = TrackedWorkout.Builder()

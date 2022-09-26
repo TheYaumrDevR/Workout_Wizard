@@ -36,7 +36,7 @@ class WorkoutDefinitionTest {
 
         val setFive: ExerciseSetDefinition = ExerciseSetDefinition.Builder()
             .baseType(ExerciseBaseType.WITH_REPETITIONS_AND_WEIGHTS)
-            .name("Skull Lateral Raise")
+            .name("Dumbbell Lateral Raise")
             .build()
 
         testCandidate.addExerciseSetDefinitionWithExecutionAmount(setOne, 1)
