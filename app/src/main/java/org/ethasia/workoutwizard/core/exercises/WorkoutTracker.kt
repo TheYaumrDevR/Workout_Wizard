@@ -7,21 +7,24 @@ class WorkoutTracker {
 
     fun startWorkoutFromWorkoutDefinition(definition: WorkoutDefinition) {
         val trackedWorkoutBuilder = TrackedWorkout.Builder()
-        val exerciseSets = createExerciseSets(definition, 0)
-
         trackedWorkoutBuilder.name(definition.name)
 
-        for (exerciseSet in exerciseSets) {
-            trackedWorkoutBuilder.addExerciseSet(exerciseSet)
-        }
+        initializeExerciseSets(definition, trackedWorkoutBuilder)
         
         trackedWorkout = trackedWorkoutBuilder.build()
     }
 
+    private fun initializeExerciseSets(definition: WorkoutDefinition, trackedWorkoutBuilder: TrackedWorkout.Builder) {
+        val exerciseSets = createExerciseSets(definition, 0)
+        for (exerciseSet in exerciseSets) {
+            trackedWorkoutBuilder.addExerciseSet(exerciseSet)
+        }
+    }
+
     private fun createExerciseSets(definition: WorkoutDefinition, recursionDepth: Int): MutableList<ExerciseSet> {
         val result: MutableList<ExerciseSet> = arrayListOf<ExerciseSet>()
-        var continueRecursion = false
 
+        var continueRecursion = false
         definition.definitionsIterator().forEach {
             if (it.executionAmount - recursionDepth > 0) {
                 val exerciseSet = createExerciseSetFromDefinition(it.exerciseSetDefinition)
