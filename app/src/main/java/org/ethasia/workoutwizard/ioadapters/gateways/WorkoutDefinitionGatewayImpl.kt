@@ -14,10 +14,17 @@ class WorkoutDefinitionGatewayImpl : WorkoutDefinitionGateway {
         val pushWorkout = createPushWorkout()
         val pullWorkout = createPullWorkout()
         val legWorkout = createLegWorkout()
+        val rotisserieWorkout = createRotisserieWorkout()
 
         result.addWorkoutDefinition(pushWorkout)
         result.addWorkoutDefinition(pullWorkout)
+        result.addWorkoutDefinition(rotisserieWorkout)
         result.addWorkoutDefinition(legWorkout)
+        result.addWorkoutDefinition(pushWorkout)
+        result.addWorkoutDefinition(rotisserieWorkout)
+        result.addWorkoutDefinition(pullWorkout)
+        result.addWorkoutDefinition(legWorkout)
+        result.addWorkoutDefinition(rotisserieWorkout)
 
         return result
     }
@@ -129,6 +136,26 @@ class WorkoutDefinitionGatewayImpl : WorkoutDefinitionGateway {
         result.addExerciseSetDefinitionWithExecutionAmount(deadlifts, 3)
         result.addExerciseSetDefinitionWithExecutionAmount(squats, 3)
         result.addExerciseSetDefinitionWithExecutionAmount(calfRaises, 3)
+
+        return result
+    }
+
+    private fun createRotisserieWorkout(): WorkoutDefinition {
+        val result = WorkoutDefinition("Rotisserie Workout")
+
+        val rotisserieSetOne = ExerciseSetDefinition
+            .Builder()
+            .name("Rotisserie Set 1")
+            .baseType(ExerciseBaseType.WITH_NOTHING)
+            .build()
+        val rotisserieSetTwo = ExerciseSetDefinition
+            .Builder()
+            .name("Rotisserie Set 2")
+            .baseType(ExerciseBaseType.WITH_NOTHING)
+            .build()
+
+        result.addExerciseSetDefinitionWithExecutionAmount(rotisserieSetOne, 1)
+        result.addExerciseSetDefinitionWithExecutionAmount(rotisserieSetTwo, 1)
 
         return result
     }
