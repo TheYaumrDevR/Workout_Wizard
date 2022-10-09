@@ -2,7 +2,8 @@ package org.ethasia.workoutwizard.core.exercises
 
 class ExerciseSetWithRepetitions private constructor(
     val repetitionCount: Int,
-    override val name: String) : ExerciseSet {
+    override val name: String,
+    override val uniqueId: String) : ExerciseSet {
 
 
     override fun getBaseType(): ExerciseBaseType {
@@ -10,10 +11,12 @@ class ExerciseSetWithRepetitions private constructor(
     }
 
     data class Builder(var repetitionCount: Int = 0,
-                       var name: String = "") {
+                       var name: String = "",
+                       var uniqueId: String = "") {
 
         fun repetitionCount(value: Int) = apply { repetitionCount = value }
         fun name(value: String) = apply { name = value }
-        fun build() = ExerciseSetWithRepetitions(repetitionCount, name)
+        fun uniqueId(value: String) = apply { uniqueId = value }
+        fun build() = ExerciseSetWithRepetitions(repetitionCount, name, uniqueId)
     }
 }

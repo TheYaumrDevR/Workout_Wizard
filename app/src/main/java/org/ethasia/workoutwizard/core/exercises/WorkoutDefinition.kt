@@ -1,6 +1,10 @@
 package org.ethasia.workoutwizard.core.exercises
 
+import java.util.*
+
 class WorkoutDefinition(val name: String) {
+
+    val uniqueId = UUID.randomUUID().toString()
 
     private val containedSets: MutableList<ExerciseSetWithExecutionAmount> = mutableListOf<ExerciseSetWithExecutionAmount>()
 

@@ -1,6 +1,10 @@
 package org.ethasia.workoutwizard.core.exercises
 
+import java.util.*
+
 class ExerciseSetDefinition private constructor(val baseType: ExerciseBaseType, val name: String) {
+
+    val uniqueId = UUID.randomUUID().toString()
 
     data class Builder(
         var baseType: ExerciseBaseType = ExerciseBaseType.WITH_REPETITIONS_AND_WEIGHTS,

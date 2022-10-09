@@ -11,20 +11,25 @@ class WorkoutDefinitionGatewayImpl : WorkoutDefinitionGateway {
     override fun findWorkoutCycleDefinition(): WorkoutCycleDefinition {
         val result = WorkoutCycleDefinition("Intermediate Home Workout")
 
-        val pushWorkout = createPushWorkout()
-        val pullWorkout = createPullWorkout()
-        val legWorkout = createLegWorkout()
-        val rotisserieWorkout = createRotisserieWorkout()
+        val pushWorkout1 = createPushWorkout()
+        val pullWorkout1 = createPullWorkout()
+        val legWorkout1 = createLegWorkout()
+        val pushWorkout2 = createPushWorkout()
+        val pullWorkout2 = createPullWorkout()
+        val legWorkout2 = createLegWorkout()
+        val rotisserieWorkout1 = createRotisserieWorkout()
+        val rotisserieWorkout2 = createRotisserieWorkout()
+        val rotisserieWorkout3 = createRotisserieWorkout()
 
-        result.addWorkoutDefinition(pushWorkout)
-        result.addWorkoutDefinition(pullWorkout)
-        result.addWorkoutDefinition(rotisserieWorkout)
-        result.addWorkoutDefinition(legWorkout)
-        result.addWorkoutDefinition(pushWorkout)
-        result.addWorkoutDefinition(rotisserieWorkout)
-        result.addWorkoutDefinition(pullWorkout)
-        result.addWorkoutDefinition(legWorkout)
-        result.addWorkoutDefinition(rotisserieWorkout)
+        result.addWorkoutDefinition(pushWorkout1)
+        result.addWorkoutDefinition(pullWorkout1)
+        result.addWorkoutDefinition(rotisserieWorkout1)
+        result.addWorkoutDefinition(legWorkout1)
+        result.addWorkoutDefinition(pushWorkout2)
+        result.addWorkoutDefinition(rotisserieWorkout2)
+        result.addWorkoutDefinition(pullWorkout2)
+        result.addWorkoutDefinition(legWorkout2)
+        result.addWorkoutDefinition(rotisserieWorkout3)
 
         return result
     }

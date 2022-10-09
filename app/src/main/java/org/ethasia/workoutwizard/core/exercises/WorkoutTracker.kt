@@ -8,6 +8,7 @@ class WorkoutTracker {
     fun startWorkoutFromWorkoutDefinition(definition: WorkoutDefinition) {
         val trackedWorkoutBuilder = TrackedWorkout.Builder()
         trackedWorkoutBuilder.name(definition.name)
+        trackedWorkoutBuilder.uniqueId(definition.uniqueId)
 
         initializeExerciseSets(definition, trackedWorkoutBuilder)
         
@@ -43,11 +44,20 @@ class WorkoutTracker {
 
     private fun createExerciseSetFromDefinition(exerciseSetDefinition: ExerciseSetDefinition): ExerciseSet {
         return when (exerciseSetDefinition.baseType) {
-            ExerciseBaseType.WITH_NOTHING -> ExerciseSetWithoutRepetitionsAndWeights.Builder().name(exerciseSetDefinition.name).build()
+            ExerciseBaseType.WITH_NOTHING -> ExerciseSetWithoutRepetitionsAndWeights.Builder()
+                .name(exerciseSetDefinition.name)
+                .uniqueId(exerciseSetDefinition.uniqueId)
+                .build()
 
-            ExerciseBaseType.WITH_REPETITIONS -> ExerciseSetWithRepetitions.Builder().name(exerciseSetDefinition.name).build()
+            ExerciseBaseType.WITH_REPETITIONS -> ExerciseSetWithRepetitions.Builder()
+                .name(exerciseSetDefinition.name)
+                .uniqueId(exerciseSetDefinition.uniqueId)
+                .build()
 
-            ExerciseBaseType.WITH_REPETITIONS_AND_WEIGHTS -> ExerciseSetWithRepetitionsAndWeights.Builder().name(exerciseSetDefinition.name).build()
+            ExerciseBaseType.WITH_REPETITIONS_AND_WEIGHTS -> ExerciseSetWithRepetitionsAndWeights.Builder()
+                .name(exerciseSetDefinition.name)
+                .uniqueId(exerciseSetDefinition.uniqueId)
+                .build()
         }
     }
 }

@@ -1,6 +1,10 @@
 package org.ethasia.workoutwizard.core.exercises
 
+import java.util.*
+
 class WorkoutCycleDefinition(val name: String) {
+
+    val uniqueId = UUID.randomUUID().toString()
 
     private val workouts: MutableList<WorkoutDefinition> = mutableListOf<WorkoutDefinition>()
 
