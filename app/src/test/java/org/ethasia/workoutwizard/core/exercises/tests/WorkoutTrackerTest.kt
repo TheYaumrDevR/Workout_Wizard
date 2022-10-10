@@ -42,6 +42,7 @@ class WorkoutTrackerTest {
 
         assertThat(createdWorkout.sets.size, `is`(equalTo(7)))
         assertThat(createdWorkout.name, `is`(equalTo("Push Workout")))
+        assertThat(createdWorkout.uniqueId, `is`(equalTo(workoutDefinition.uniqueId)))
 
         assertThat(createdWorkout.sets[0].name, `is`(equalTo("Pushups")))
         assertThat(createdWorkout.sets[1].name, `is`(equalTo("Dumbbell Flies")))
@@ -50,6 +51,14 @@ class WorkoutTrackerTest {
         assertThat(createdWorkout.sets[4].name, `is`(equalTo("Skull Crushers")))
         assertThat(createdWorkout.sets[5].name, `is`(equalTo("Dumbbell Flies")))
         assertThat(createdWorkout.sets[6].name, `is`(equalTo("Skull Crushers")))
+
+        assertThat(createdWorkout.sets[0].uniqueId, `is`(equalTo(setOne.uniqueId)))
+        assertThat(createdWorkout.sets[1].uniqueId, `is`(equalTo(setTwo.uniqueId)))
+        assertThat(createdWorkout.sets[2].uniqueId, `is`(equalTo(setThree.uniqueId)))
+        assertThat(createdWorkout.sets[3].uniqueId, `is`(equalTo(setTwo.uniqueId)))
+        assertThat(createdWorkout.sets[4].uniqueId, `is`(equalTo(setThree.uniqueId)))
+        assertThat(createdWorkout.sets[5].uniqueId, `is`(equalTo(setTwo.uniqueId)))
+        assertThat(createdWorkout.sets[6].uniqueId, `is`(equalTo(setThree.uniqueId)))
 
         assertThat(createdWorkout.sets[0].getBaseType(), `is`(equalTo(ExerciseBaseType.WITH_REPETITIONS)))
         assertThat(createdWorkout.sets[1].getBaseType(), `is`(equalTo(ExerciseBaseType.WITH_REPETITIONS_AND_WEIGHTS)))

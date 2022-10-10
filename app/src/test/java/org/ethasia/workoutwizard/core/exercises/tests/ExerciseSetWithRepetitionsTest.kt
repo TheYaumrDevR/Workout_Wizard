@@ -14,10 +14,12 @@ class ExerciseSetWithRepetitionsTest {
         val product: ExerciseSetWithRepetitions = ExerciseSetWithRepetitions.Builder()
             .repetitionCount(20)
             .name("Pushups")
+            .uniqueId("zuijhgbf")
             .build()
 
         assertThat(product.repetitionCount, `is`(equalTo(20)))
         assertThat(product.name, `is`(equalTo("Pushups")))
+        assertThat(product.uniqueId, `is`(equalTo("zuijhgbf")))
     }
 
     @Test

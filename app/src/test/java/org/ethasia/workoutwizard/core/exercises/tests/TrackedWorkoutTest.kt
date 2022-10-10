@@ -27,9 +27,11 @@ class TrackedWorkoutTest {
             .name("Bench Press")
             .addExerciseSet(testExerciseSet)
             .addExerciseSet(testExerciseSetTwo)
+            .uniqueId("kolbovd")
             .build()
 
         assertThat(product.name, `is`(equalTo("Bench Press")))
+        assertThat(product.uniqueId, `is`(equalTo("kolbovd")))
         assertThat(product.sets, hasItems(testExerciseSet, testExerciseSetTwo))
     }
 }

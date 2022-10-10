@@ -14,9 +14,11 @@ class ExerciseSetWithoutRepetitionsAndWeightsTest {
     fun testBuilderSetsPropertiesCorrectly() {
         val product: ExerciseSetWithoutRepetitionsAndWeights = ExerciseSetWithoutRepetitionsAndWeights.Builder()
             .name("Rotisserie")
+            .uniqueId("addsde")
             .build()
 
         assertThat(product.name, `is`(equalTo("Rotisserie")))
+        assertThat(product.uniqueId, `is`(equalTo("addsde")))
     }
 
     @Test
