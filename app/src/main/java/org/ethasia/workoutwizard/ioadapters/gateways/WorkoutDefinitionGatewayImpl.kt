@@ -8,7 +8,7 @@ import org.ethasia.workoutwizard.interactors.exercisetracking.crosslayer.Workout
 
 class WorkoutDefinitionGatewayImpl : WorkoutDefinitionGateway {
 
-    override fun findWorkoutCycleDefinition(): WorkoutCycleDefinition {
+    override fun findWorkoutCycleDefinitionById(uniqueId: String): WorkoutCycleDefinition {
         val result = WorkoutCycleDefinition("Intermediate Home Workout")
 
         val pushWorkout1 = createPushWorkout()

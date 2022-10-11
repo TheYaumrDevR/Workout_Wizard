@@ -5,6 +5,7 @@ import java.util.*
 import org.ethasia.workoutwizard.core.exercises.ExerciseSetWithRepetitionsAndWeights
 import org.ethasia.workoutwizard.core.exercises.TrackedWorkout
 import org.ethasia.workoutwizard.interactors.exercisetracking.crosslayer.TrackedExercisesGateway
+import org.ethasia.workoutwizard.interactors.exercisetracking.crosslayer.workouttracking.LastCompletedWorkoutAndSetIds
 
 class TrackedExercisesGatewayMock : TrackedExercisesGateway {
 
@@ -59,5 +60,9 @@ class TrackedExercisesGatewayMock : TrackedExercisesGateway {
             .build()
 
         return arrayListOf<TrackedWorkout>(benchPress, dumbbellFly)
+    }
+
+    override fun findLastCompletedSetsAndExercisesInformation(): LastCompletedWorkoutAndSetIds {
+        return LastCompletedWorkoutAndSetIds("1", "1", "1")
     }
 }

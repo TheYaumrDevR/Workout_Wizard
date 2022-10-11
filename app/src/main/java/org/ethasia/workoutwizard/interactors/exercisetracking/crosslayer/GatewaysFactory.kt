@@ -7,4 +7,5 @@ abstract class GatewaysFactory {
     }
 
     abstract fun createTrackedExercisesGateway(): TrackedExercisesGateway
+    abstract fun createWorkoutDefinitionGateway(): WorkoutDefinitionGateway
 }
