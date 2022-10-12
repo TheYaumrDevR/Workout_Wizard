@@ -12,7 +12,7 @@ class WorkoutDefinitionTest {
 
     @Test
     fun testIteratorReturnsPreviouslyAddedExerciseSets() {
-        val testCandidate = WorkoutDefinition("Push Workout")
+        val testCandidate = WorkoutDefinition("Push Workout", "fdguhifhuigfuf")
 
         val setOne: ExerciseSetDefinition = ExerciseSetDefinition.Builder()
             .baseType(ExerciseBaseType.WITH_REPETITIONS)

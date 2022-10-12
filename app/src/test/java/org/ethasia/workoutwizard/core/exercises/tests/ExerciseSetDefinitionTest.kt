@@ -14,9 +14,11 @@ class ExerciseSetDefinitionTest {
         val product: ExerciseSetDefinition = ExerciseSetDefinition.Builder()
             .baseType(ExerciseBaseType.WITH_REPETITIONS_AND_WEIGHTS)
             .name("Dumbbell Flies")
+            .uniqueId("mbgjndfkfdkj")
             .build()
 
         assertThat(product.baseType, `is`(equalTo(ExerciseBaseType.WITH_REPETITIONS_AND_WEIGHTS)))
         assertThat(product.name, `is`(equalTo("Dumbbell Flies")))
+        assertThat(product.uniqueId, `is`(equalTo("mbgjndfkfdkj")))
     }
 }

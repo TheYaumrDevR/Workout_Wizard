@@ -15,21 +15,21 @@ class WorkoutCycleDefinitionTest {
     fun testItearatorReturnsPreviouslyAddedWorkouts() {
         val testCandidate = WorkoutCycleDefinition("Homeworkout Intermediate")
 
-        val workoutOne = WorkoutDefinition("Push Workout")
+        val workoutOne = WorkoutDefinition("Push Workout", "guihifzhfdshuifd")
         val setOne: ExerciseSetDefinition = ExerciseSetDefinition.Builder()
             .baseType(ExerciseBaseType.WITH_REPETITIONS)
             .name("Pushups")
             .build()
         workoutOne.addExerciseSetDefinitionWithExecutionAmount(setOne, 3)
 
-        val workoutTwo = WorkoutDefinition("Pull Workout")
+        val workoutTwo = WorkoutDefinition("Pull Workout", "fhbduhdihifd")
         val setTwo: ExerciseSetDefinition = ExerciseSetDefinition.Builder()
             .baseType(ExerciseBaseType.WITH_REPETITIONS)
             .name("Pullups")
             .build()
         workoutTwo.addExerciseSetDefinitionWithExecutionAmount(setTwo, 3)
 
-        val workoutThree = WorkoutDefinition("Abs Workout")
+        val workoutThree = WorkoutDefinition("Abs Workout", "sdhidfhidfhidfhifd")
         val setThree: ExerciseSetDefinition = ExerciseSetDefinition.Builder()
             .baseType(ExerciseBaseType.WITH_REPETITIONS)
             .name("Situps")

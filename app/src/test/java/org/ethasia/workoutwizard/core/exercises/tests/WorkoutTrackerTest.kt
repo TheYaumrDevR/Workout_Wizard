@@ -15,7 +15,7 @@ class WorkoutTrackerTest {
     fun testWorkoutIsCorrectlyCreatedFromWorkoutDefinition() {
         val testCandidate = WorkoutTracker()
 
-        val workoutDefinition = WorkoutDefinition("Push Workout")
+        val workoutDefinition = WorkoutDefinition("Push Workout", "ghffdsdfhsdfhiusdf")
 
         val setOne: ExerciseSetDefinition = ExerciseSetDefinition.Builder()
             .baseType(ExerciseBaseType.WITH_REPETITIONS)

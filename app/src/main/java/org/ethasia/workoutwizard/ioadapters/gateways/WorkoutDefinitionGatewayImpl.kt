@@ -8,6 +8,8 @@ import org.ethasia.workoutwizard.interactors.exercisetracking.crosslayer.Workout
 
 class WorkoutDefinitionGatewayImpl : WorkoutDefinitionGateway {
 
+    val uuidProvider = UuidProvider()
+
     override fun findWorkoutCycleDefinitionById(uniqueId: String): WorkoutCycleDefinition {
         val result = WorkoutCycleDefinition("Intermediate Home Workout")
 
@@ -35,30 +37,35 @@ class WorkoutDefinitionGatewayImpl : WorkoutDefinitionGateway {
     }
 
     private fun createPushWorkout(): WorkoutDefinition {
-        val result = WorkoutDefinition("Push Workout")
+        val result = WorkoutDefinition("Push Workout", uuidProvider.getNextWorkoutUuid())
 
         val pushups = ExerciseSetDefinition
             .Builder()
+            .uniqueId(uuidProvider.getNextSetId())
             .name("Pushups")
             .baseType(ExerciseBaseType.WITH_REPETITIONS)
             .build()
         val dumbbellFlies = ExerciseSetDefinition
             .Builder()
+            .uniqueId(uuidProvider.getNextSetId())
             .name("Dumbbell Flies")
             .baseType(ExerciseBaseType.WITH_REPETITIONS_AND_WEIGHTS)
             .build()
         val skullCrushers = ExerciseSetDefinition
             .Builder()
+            .uniqueId(uuidProvider.getNextSetId())
             .name("Skull Crushers")
             .baseType(ExerciseBaseType.WITH_REPETITIONS_AND_WEIGHTS)
             .build()
         val dumbbellShoulderPress = ExerciseSetDefinition
             .Builder()
+            .uniqueId(uuidProvider.getNextSetId())
             .name("Dumbbell Shoulder Press")
             .baseType(ExerciseBaseType.WITH_REPETITIONS_AND_WEIGHTS)
             .build()
         val dumbbellLateralRaises = ExerciseSetDefinition
             .Builder()
+            .uniqueId(uuidProvider.getNextSetId())
             .name("Dumbbell Lateral Raise")
             .baseType(ExerciseBaseType.WITH_REPETITIONS_AND_WEIGHTS)
             .build()
@@ -72,30 +79,35 @@ class WorkoutDefinitionGatewayImpl : WorkoutDefinitionGateway {
     }
 
     private fun createPullWorkout(): WorkoutDefinition {
-        val result = WorkoutDefinition("Pull Workout")
+        val result = WorkoutDefinition("Pull Workout", uuidProvider.getNextWorkoutUuid())
 
         val pushups = ExerciseSetDefinition
             .Builder()
+            .uniqueId(uuidProvider.getNextSetId())
             .name("Pushups")
             .baseType(ExerciseBaseType.WITH_REPETITIONS)
             .build()
         val dumbbellReverseFlies = ExerciseSetDefinition
             .Builder()
+            .uniqueId(uuidProvider.getNextSetId())
             .name("Dumbbell Reverse Flies")
             .baseType(ExerciseBaseType.WITH_REPETITIONS_AND_WEIGHTS)
             .build()
         val dumbbellCurls = ExerciseSetDefinition
             .Builder()
+            .uniqueId(uuidProvider.getNextSetId())
             .name("Dumbbell Curls")
             .baseType(ExerciseBaseType.WITH_REPETITIONS_AND_WEIGHTS)
             .build()
         val barbellRows = ExerciseSetDefinition
             .Builder()
+            .uniqueId(uuidProvider.getNextSetId())
             .name("Barbell Rows")
             .baseType(ExerciseBaseType.WITH_REPETITIONS_AND_WEIGHTS)
             .build()
         val hammerCurls = ExerciseSetDefinition
             .Builder()
+            .uniqueId(uuidProvider.getNextSetId())
             .name("Hammer Curls")
             .baseType(ExerciseBaseType.WITH_REPETITIONS_AND_WEIGHTS)
             .build()
@@ -109,30 +121,35 @@ class WorkoutDefinitionGatewayImpl : WorkoutDefinitionGateway {
     }
 
     private fun createLegWorkout(): WorkoutDefinition {
-        val result = WorkoutDefinition("Leg Workout")
+        val result = WorkoutDefinition("Leg Workout", uuidProvider.getNextWorkoutUuid())
 
         val dumbbellReverseFlies = ExerciseSetDefinition
             .Builder()
+            .uniqueId(uuidProvider.getNextSetId())
             .name("Dumbbell Reverse Flies")
             .baseType(ExerciseBaseType.WITH_REPETITIONS_AND_WEIGHTS)
             .build()
         val lunges = ExerciseSetDefinition
             .Builder()
+            .uniqueId(uuidProvider.getNextSetId())
             .name("Lunges")
             .baseType(ExerciseBaseType.WITH_REPETITIONS_AND_WEIGHTS)
             .build()
         val deadlifts = ExerciseSetDefinition
             .Builder()
+            .uniqueId(uuidProvider.getNextSetId())
             .name("Deadlifts")
             .baseType(ExerciseBaseType.WITH_REPETITIONS_AND_WEIGHTS)
             .build()
         val squats = ExerciseSetDefinition
             .Builder()
+            .uniqueId(uuidProvider.getNextSetId())
             .name("Squats")
             .baseType(ExerciseBaseType.WITH_REPETITIONS_AND_WEIGHTS)
             .build()
         val calfRaises = ExerciseSetDefinition
             .Builder()
+            .uniqueId(uuidProvider.getNextSetId())
             .name("Calf Raises")
             .baseType(ExerciseBaseType.WITH_REPETITIONS_AND_WEIGHTS)
             .build()
@@ -146,15 +163,17 @@ class WorkoutDefinitionGatewayImpl : WorkoutDefinitionGateway {
     }
 
     private fun createRotisserieWorkout(): WorkoutDefinition {
-        val result = WorkoutDefinition("Rotisserie Workout")
+        val result = WorkoutDefinition("Rotisserie Workout", uuidProvider.getNextWorkoutUuid())
 
         val rotisserieSetOne = ExerciseSetDefinition
             .Builder()
+            .uniqueId(uuidProvider.getNextSetId())
             .name("Rotisserie Set 1")
             .baseType(ExerciseBaseType.WITH_NOTHING)
             .build()
         val rotisserieSetTwo = ExerciseSetDefinition
             .Builder()
+            .uniqueId(uuidProvider.getNextSetId())
             .name("Rotisserie Set 2")
             .baseType(ExerciseBaseType.WITH_NOTHING)
             .build()
