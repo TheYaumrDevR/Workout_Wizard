@@ -8,7 +8,7 @@ import org.ethasia.workoutwizard.interactors.exercisetracking.crosslayer.Workout
 
 class WorkoutDefinitionGatewayImpl : WorkoutDefinitionGateway {
 
-    val uuidProvider = UuidProvider()
+    private val uuidProvider = UuidProvider()
 
     override fun findWorkoutCycleDefinitionById(uniqueId: String): WorkoutCycleDefinition {
         val result = WorkoutCycleDefinition("Intermediate Home Workout")
