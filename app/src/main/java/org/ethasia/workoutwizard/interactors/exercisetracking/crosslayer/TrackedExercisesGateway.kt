@@ -6,5 +6,6 @@ import org.ethasia.workoutwizard.interactors.exercisetracking.crosslayer.workout
 interface TrackedExercisesGateway {
 
     fun findLastCompletedSetsAndExercisesInformation(): LastCompletedWorkoutAndSetIds
+    fun saveLastCompletedSetsAndExercisesInformation(toSave: LastCompletedWorkoutAndSetIds)
     fun findTrackedExercises(): List<TrackedWorkout>
 }
